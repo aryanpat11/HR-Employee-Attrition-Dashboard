@@ -1,94 +1,91 @@
-📊 HR Employee Attrition Dashboard
-This repository contains my HR Employee Attrition project where I analyzed a sample employee dataset using Microsoft Power BI. The goal was to build an interactive dashboard to uncover key factors driving employee attrition, enabling data-driven decision-making for HR departments.
+# 📊 HR Employee Attrition Dashboard  
 
-📂 Project Overview
-Domain: HR Analytics / People Analytics
+This repository contains my **HR Employee Attrition Analysis** project, where I explored a sample HR dataset using **Microsoft Power BI**.  
+The goal was to build an **interactive dashboard** that uncovers key factors driving employee attrition, helping HR departments make **data-driven decisions** to improve retention strategies.  
 
-Tool Used: Microsoft Power BI
+---
 
-Dataset: HR Employee Attrition Sample (.xlsx format)
+## 📂 Project Overview  
 
-Output: Interactive Power BI Report (.pbix file)
+- **Domain**: HR Analytics / People Analytics  
+- **Tool Used**: Microsoft Power BI  
+- **Dataset**: HR Employee Attrition Sample (.xlsx)  
+- **Output**: Interactive Power BI Report (.pbix)  
 
-🔧 Project Workflow
-1. Data Cleaning & Transformation (in Power Query)
-Corrected data types for columns like Age, MonthlyIncome, etc.
+---
 
-Removed duplicates to ensure data integrity.
+## 🔧 Project Workflow  
 
-Trimmed and cleaned text columns (Department, JobRole).
+### 1. Data Cleaning & Transformation (Power Query)  
+✔ Corrected data types (e.g., Age, MonthlyIncome).  
+✔ Removed duplicates to ensure data integrity.  
+✔ Trimmed & standardized text columns (Department, JobRole).  
+✔ Created calculated column **AttritionFlag** (1 = Yes, 0 = No).  
+✔ Added custom columns: **AnnualIncome** & **AgeGroup** for deeper insights.  
 
-Created a calculated AttritionFlag (1 for "Yes", 0 for "No") to simplify calculations.
+### 2. Data Modeling & DAX Measures  
+Developed core DAX measures to power the dashboard visuals:  
+- **Total Employees** = `COUNTROWS('Employees')`  
+- **Attrition Count** = `SUM('Employees'[AttritionFlag])`  
+- **Attrition Rate** = `DIVIDE([Attrition Count], [Total Employees])`  
+- **Avg Monthly Income** = `AVERAGE('Employees'[MonthlyIncome])`  
 
-Added custom columns for AnnualIncome and AgeGroup to enable deeper analysis.
+### 3. Visualization & Dashboard Design  
+- **Overview Page**: High-level summary with KPIs.  
+- **KPI Cards**: Total Employees | Attrition Rate | Avg Monthly Income | Avg Annual Income.  
+- **Charts**:  
+  - Bar: Attrition by Department & Job Role.  
+  - Donut: Attrition by Gender.  
+  - Column: Attrition by Age Group.  
+- **Interactive Features**: Slicers (Department, JobRole, Gender) & Drillthrough to employee-level details.  
 
-2. Data Modeling & DAX Measures
-Developed key DAX measures to power the dashboard visuals:
+---
 
-Total Employees = COUNTROWS('Employees')
+## 💡 Key Insights  
 
-Attrition Count = SUM('Employees'[AttritionFlag])
+- 🚨 **High Attrition Rate**: 47% — a critical HR challenge.  
+- 👔 **Managers** face the highest attrition → Possible leadership or growth issues.  
+- 👨‍👩‍👧 **Age 31–40 group** shows the most exits → Career building phase risk.  
+- 📈 **Marketing Department** has the most departures.  
 
-Attrition Rate = DIVIDE([Attrition Count], [Total Employees])
+---
 
-Avg Monthly Income = AVERAGE('Employees'[MonthlyIncome])
+## 📸 Dashboard Snapshots  
+<img width="1320" height="738" alt="image" src="https://github.com/user-attachments/assets/8503fa26-fa3f-41fe-9197-ee7529a7d3b2" />
+<img width="1263" height="446" alt="image" src="https://github.com/user-attachments/assets/cdcc19ee-6186-4cf9-8c8f-4eb975193197" />
 
-3. Visualization & Dashboard Design
-Designed a summary "Overview" page to display high-level insights at a glance.
 
-Created KPI Cards for key metrics: Total Employees, Attrition Rate, Avg Monthly Income, and Avg Annual Income.
 
-Developed multiple charts to break down attrition by different dimensions:
+---
 
-Bar Charts: Attrition by Department and Job Role.
+## 🛠️ Tools & Technologies  
 
-Donut Chart: Attrition by Gender.
+- **Power BI Desktop** → Data visualization, modeling & dashboard design.  
+- **Power Query** → Data cleaning & transformation (ETL).  
+- **DAX (Data Analysis Expressions)** → Custom calculations & measures.  
+- **Excel** → Source dataset.  
 
-Column Chart: Attrition by Age Group.
+---
 
-Implemented interactive Slicers (Department, JobRole, Gender) and a Drillthrough feature to a detailed employee view.
+## 📁 Repository Contents  
 
-💡 Key Insights
-The company has a high attrition rate of 47%, indicating a significant challenge to retention.
+- `HR_Attrition_Analysis.pbix` → Final Power BI report.  
+- `HR_Employee_Attrition_Sample.xlsx` → Dataset used.  
+- `README.md` → Project documentation.  
 
-The Manager job role experiences the highest number of departures, suggesting potential issues in leadership roles or career progression.
+---
 
-Attrition is most prevalent among employees in the 31-40 age group, a critical phase for career building.
+## 📌 Internship / Learning Context  
 
-The Marketing department has the highest number of employees leaving the company.
+This project demonstrates my ability in:  
+- End-to-end **Power BI dashboard development**.  
+- **Data cleaning & transformation** with Power Query.  
+- Building **robust DAX calculations**.  
+- Designing **interactive dashboards** for stakeholders.  
 
-📸 Dashboard Snapshots
-(Add a screenshot of your main dashboard 'Overview' page here.)
+---
 
-🛠️ Tools & Technologies
-Power BI Desktop: Data visualization, modeling, and dashboard creation.
+## 👤 Author  
 
-Power Query: For ETL (Extract, Transform, Load) processes.
-
-DAX (Data Analysis Expressions): For creating custom calculations and measures.
-
-Excel: Raw dataset source.
-
-📁 Repository Contents
-HR_Attrition_Analysis.pbix → The final Power BI report file.
-
-HR_Employee_Attrition_Sample.xlsx → The dataset used for the analysis.
-
-README.md → This project documentation.
-
-📌 Internship Context
-(Optional: If this project was for an internship or a specific program, you can add details here.)
-This project was developed to demonstrate skills in:
-
-End-to-end Power BI report development.
-
-Data cleaning and transformation with Power Query.
-
-Creating robust calculations with DAX.
-
-Designing insightful and interactive dashboards for business stakeholders.
-
-👤 Author
-Aryan Roshan Patil
-
-[LinkedIn][(https://www.linkedin.com/in/aryan-patil-245717286/)
+**Aryan Roshan Patil**  
+[LinkedIn](https://www.linkedin.com/in/aryan-patil-245717286/)  
